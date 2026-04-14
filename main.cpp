@@ -117,7 +117,7 @@ void ejercicio1() {
     std::cout << "\nSuma de cada fila:\n";
     int i = 0;
     while (i < n) {
-        std::cout << "  Fila " << i << ": " << sumas[i] << "\n";
+        std::cout << "Fila " << i << ": " << sumas[i] << "\n";
         i++;
     }
     delete[] sumas;
@@ -143,7 +143,7 @@ double doble(double x) {
 
 double inverso(double x) {
     if (x == 0) {
-        std::cout << "  Error: no se puede calcular el inverso de 0\n";
+        std::cout << "Error: no se puede calcular el inverso de 0\n";
         return 0;
     } else {
         return 1.0 / x;
@@ -179,7 +179,7 @@ void ejercicio2() {
 
     int i = 0;
     while (i < tam) {
-        std::cout << "  arreglo[" << i << "] = ";
+        std::cout << "arreglo[" << i << "] = ";
         std::cin >> arreglo[i];
         i++;
     }
@@ -218,13 +218,7 @@ void ejercicio2() {
     delete[] arreglo;
 }
 
-double transformarYAcumular(
-    double* arreglo,
-    int tam,
-    double (*transformar)(double),
-    double (*acumular)(double, double),
-    double valorInicial)
-{
+double transformarYAcumular(double* arreglo, int tam, double (*transformar)(double), double (*acumular)(double, double), double valorInicial){
     double resultado = valorInicial;
 
     int i = 0;
@@ -246,7 +240,7 @@ double sumar(double acumulado, double x) {
 }
 
 void ejercicio3() {
-    std::cout << "\nLambdas + composición\n";
+    std::cout << "\nLambdas + composiciÃ³n\n";
 
     int tam;
     std::cout << "Tamano del arreglo: ";
@@ -256,7 +250,7 @@ void ejercicio3() {
 
     int i = 0;
     while (i < tam) {
-        std::cout << "  arreglo[" << i << "] = ";
+        std::cout << "arreglo[" << i << "] = ";
         std::cin >> arreglo[i];
         i++;
     }
@@ -270,8 +264,8 @@ void ejercicio3() {
     delete[] arreglo;
 }
 
-double paso_x2   (double x) { return x * 2; }
-double paso_mas3 (double x) { return x + 3; }
+double paso_x2(double x) { return x * 2; }
+double paso_mas3(double x) { return x + 3; }
 double paso_cuad (double x) { return x * x; }
 double paso_mitad(double x) { return x / 2; }
 double paso_menos1(double x){ return x - 1; }
@@ -287,7 +281,7 @@ void ejercicio4() {
 
     int i = 0;
     while (i < tam) {
-        std::cout << "  arreglo[" << i << "] = ";
+        std::cout << "arreglo[" << i << "] = ";
         std::cin >> arreglo[i];
         i++;
     }
@@ -322,7 +316,7 @@ void ejercicio4() {
         } else if (eleccion == 5) {
             step[cantidadPasos] = paso_menos1;
         } else {
-            std::cout << "  Opcion invalida, intenta de nuevo.\n";
+            std::cout << "Opcion invalida, intenta de nuevo.\n";
             continue;
         }
 
@@ -339,17 +333,17 @@ void ejercicio4() {
     int idx = 0;
     while (idx < tam) {
         double valor = arreglo[idx];
-        std::cout << "  arreglo[" << idx << "] = " << valor << "\n";
+        std::cout << "arreglo[" << idx << "] = " << valor << "\n";
 
         int paso = 0;
         while (paso < cantidadPasos) {
             double antes = valor;
             valor = step[paso](valor);
-            std::cout << "    paso " << (paso + 1) << ": " << antes << " -> " << valor << "\n";
+            std::cout << "paso " << (paso + 1) << ": " << antes << " -> " << valor << "\n";
             paso++;
         }
 
-        std::cout << "  Resultado final: " << valor << "\n\n";
+        std::cout << "Resultado final: " << valor << "\n\n";
         idx++;
     }
 
